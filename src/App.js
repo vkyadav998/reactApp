@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch , Route, Link} from "react-router-dom";
+// import Navbar from './Navbar';
+import Home from './components/Home';
+import ProductList from './components/Productlist';
+import ProductDetail from './components/ProductDetail';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  render(){
+    return (
+      <React.Fragment>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <Link to="/" className="navbar-brand" >Home</Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            {/* <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <Link to={'/productdetail'} className="nav-link">Product Detail</Link>
+              </li>
+            </ul> */}
+          </div>
+
+          <button className="btn btn-outline-success my-2 my-sm-0">
+            <Link to="/productlist"> Your Shop</Link>
+          </button>
+        </nav>
+        {/* <Navbar /> */}
+
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route path="/productlist" component={ProductList}></Route>
+            <Route path="/productdetail" component={ProductDetail}></Route>
+          </Switch>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
