@@ -1,7 +1,6 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
 
-class ProductDetail extends React.Component{
+export default class ProductDetail extends React.Component{
   render(){
     return (
       <React.Fragment>
@@ -10,5 +9,3 @@ class ProductDetail extends React.Component{
     )
   }
 }
-
-export default withRouter(ProductDetail);
