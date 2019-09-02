@@ -1,0 +1,17 @@
+.cartCardPrice{
+  line-height: 136px;
+  border-left: 1px solid #dfdfdf;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+  padding-left: 20px;
+}
+
+.cartCard{
+  margin: 1rem 0;
+}
+
+.removeIcon{
+  padding-right: 10px;
+  cursor: pointer;
+}

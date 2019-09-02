@@ -1,9 +1,11 @@
 import React from 'react';
 import { Switch , Route, Link} from "react-router-dom";
 // import Navbar from './Navbar';
-import Home from './components/Home';
-import ProductList from './components/Productlist';
+// import Home from './components/Home';
+import Product from './components/Product';
 import ProductDetail from './components/ProductDetail';
+import Cart from './components/Cart';
+import PageNotFound from './components/PageNotFound';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
@@ -21,15 +23,18 @@ class App extends React.Component{
           </button>
           
           <div className="navbar-collapse"></div>
-          <Link className="btn btn-outline-primary my-2 my-sm-0" to="/productlist"><FontAwesomeIcon icon={faShoppingCart} /> Your Shop</Link>
+          {/* <Link className="btn btn-outline-primary my-2 my-sm-0" to="/productList">Products</Link> */}
+          <Link className="btn btn-outline-primary my-2 my-sm-0" to="/cart"><FontAwesomeIcon icon={faShoppingCart} /> Your Cart</Link>
         </nav>
         {/* <Navbar /> */}
 
         <div className="container">
           <Switch>
-            <Route exact path="/" component={Home}></Route>
-            <Route path="/productlist" component={ProductList}></Route>
+            <Route exact path="/" component={Product}></Route>
+            {/* <Route path="/productList" component={ProductList}></Route> */}
             <Route path="/productdetail" component={ProductDetail}></Route>
+            <Route path="/cart" component={Cart}></Route>
+            <Route component={PageNotFound}></Route>
           </Switch>
         </div>
       </React.Fragment>
