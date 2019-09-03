@@ -6,7 +6,7 @@ export default class Product extends React.Component{
   render(){
     return (
       <React.Fragment>
-        <Title name="Product" heading="Store"/>
+        <Title name="Our" heading="Products"/>
         <Productlist />
       </React.Fragment>
     )

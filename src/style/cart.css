@@ -15,3 +15,12 @@
   padding-right: 10px;
   cursor: pointer;
 }
+
+.emptyCart{
+  margin-top: 2rem;
+}
+
+.cart-img{
+  max-height: 120px;
+  padding: 10px;
+}
