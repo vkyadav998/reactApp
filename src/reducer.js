@@ -1,8 +1,7 @@
 import { products } from './data/productList';
 
 const iState = {
-  products: products,
-  name : ''
+  products: products
 }
 
 const reducer = (state = iState, action) => {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import '../style/cart.css'
 import Title from './Title';
 
@@ -36,7 +37,9 @@ class Cart extends Component{
     )
 
     let emptyCart = <div className="alert alert-secondary emptyCart" role="alert">
-                      <h5 className="text-center"><FontAwesomeIcon icon={faDolly}/>Your Cart is Empty </h5>
+                      <h5 className="text-center"><FontAwesomeIcon icon={faDolly}/>Your Cart is Empty 
+                        <Link to="/"> Add Product</Link>
+                      </h5>
                     </div>
     let title = <Title name="Your" heading="Cart"/>
     return (
