@@ -9,11 +9,15 @@ const reducer = (state = iState, action) => {
   state.name = action.type;
   switch (action.type) {
     case 'ADD_TO_CART':
-      updateItemInListById(state.products, action.payload, true);
-      return state;
+      return {
+        ...state,
+        products : updateItemInListById(state.products, action.payload, true)
+      };
     case 'REMOVE_FROM_CART':
-      updateItemInListById(state.products, action.payload, false);
-      return state;
+      return {
+        ...state,
+        products : updateItemInListById(state.products, action.payload, false)
+      };;
     default:
       return state
   }
@@ -21,7 +25,7 @@ const reducer = (state = iState, action) => {
 
 function updateItemInListById(List, item, inCart){
   item.inCart = inCart;
-  List.map(currentItem => currentItem.id === item.id ? item:currentItem);
+  return List.map(currentItem => currentItem.id === item.id ? item:currentItem);
 }
 
 export default reducer;
